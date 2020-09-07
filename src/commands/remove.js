@@ -2,27 +2,15 @@ const fs = require('fs-extra');
 const inquirer = require('inquirer');
 const ProgressBar = require('progress');
 const chalk = require('chalk');
-const figlet = require('figlet');
-const util = require('util');
 
 const validate = require('../lib/validate');
 const overwrite = require('../lib/overwrite');
 const absolute = require('../lib/absolute');
 const logger = require('../lib/logger');
-
-const figletText = util.promisify(figlet.text);
-
-const printBanner = async () => {
-  const logo = await figletText('Terminator');
-  const repo = 'https://github.com/venomaze/terminator-cli';
-
-  console.log(chalk.redBright(logo));
-  console.log(chalk.grey(`   |~> Developed by ${chalk.bold('Venomaze')}`));
-  console.log(chalk.grey(`   |~> ${repo}\n`));
-};
+const banner = require('../lib/banner');
 
 module.exports = async (filePath, options) => {
-  await printBanner();
+  await banner();
 
   const absoluteFilePath = absolute(filePath);
 
