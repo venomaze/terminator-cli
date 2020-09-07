@@ -5,6 +5,7 @@
     "prettier/prettier": ["error"],
     "no-console": "off",
     "node/shebang": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "no-await-in-loop": "off"
   }
 }
