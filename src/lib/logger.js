@@ -1,7 +1,7 @@
 const chalk = require('chalk');
 
 module.exports = {
-  success: (message, minimal) => {
+  success: (message, minimal = false) => {
     if (minimal) {
       console.log(`${chalk.greenBright('[+]')} ${message}`);
       return;
@@ -10,7 +10,7 @@ module.exports = {
     console.log(`${chalk.greenBright('[SUCCESS]')} ${message}`);
   },
 
-  error: (message, minimal) => {
+  error: (message, minimal = false) => {
     if (minimal) {
       console.log(`${chalk.redBright('[-]')} ${message}`);
       return;
@@ -19,7 +19,7 @@ module.exports = {
     console.log(`${chalk.redBright('[ERROR]')} ${message}`);
   },
 
-  warning: (message, minimal) => {
+  warning: (message, minimal = false) => {
     if (minimal) {
       console.log(`${chalk.yellowBright('[!]')} ${message}`);
       return;
