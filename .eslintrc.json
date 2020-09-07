@@ -6,6 +6,8 @@
     "no-console": "off",
     "node/shebang": "off",
     "consistent-return": "off",
-    "no-await-in-loop": "off"
+    "no-await-in-loop": "off",
+    "radix": "off",
+    "no-plusplus": "off"
   }
 }

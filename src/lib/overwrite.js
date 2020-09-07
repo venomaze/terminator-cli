@@ -15,7 +15,7 @@ module.exports = async (filePath, writeCallback) => {
   while (position < fileSize) {
     const requiredLength = Math.min(bufferLength, fileSize - position);
     const buffer = await randomBytes(requiredLength);
-    const { bytesWrtitten } = await fs.write(
+    const { bytesWritten } = await fs.write(
       file,
       buffer,
       0,
@@ -23,7 +23,7 @@ module.exports = async (filePath, writeCallback) => {
       position
     );
 
-    if (bytesWrtitten !== requiredLength) {
+    if (bytesWritten !== requiredLength) {
       throw new Error('Lost data while overwriting.');
     }
 
